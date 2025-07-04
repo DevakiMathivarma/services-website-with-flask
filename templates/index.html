@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAHIRX | Electrical & Security Services </title>
+   <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/logo.png') }}">
+  <!-- --montserrat font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+  <!-- stylesheet link -->
+ <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/index.css') }}">
+  <style>
+    .zahrix-contact-section {
+      width: 100%;
+      height: 70vh;
+      background: url({{ url_for('static', filename='assets/images/lightbulb.png') }}) no-repeat center center / cover;
+      display: flex;
+      align-items: stretch;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .zahrix-contact-section {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section -->
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo"> <!-- Replace with actual image -->
+      <span>ZAHIRX</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+    <nav id="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <div class="dropdown" id="servicesDropdown">
+        <div class="dropdown-toggle" onclick="toggleDropdown(event)">Services <img src="{{ url_for('static', filename='assets/images/downarrow.png') }}"
+            alt="▼" style="width: 20px; vertical-align: middle;"></div>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="/electrical">Electrical</a>
+          <a href="/cctv">CCTV</a>
+          <a href="/bms">BMS</a>
+        </div>
+      </div>
+      <a href="/projects">Projects</a>
+      <a href="/get-quote" class="quote-btn">Get a Quote</a>
+    </nav>
+  </header>
+  <!-- hero section -->
+  <section class="hero-section">
+    <div class="content">
+      <h1>Transforming Safety and Security With <br> Cutting-Edge Technology</h1>
+      <h2>Empowering Your Space with Innovative Solutions</h2>
+      <p><strong>Zahrix</strong> provides cutting-edge electrical, CCTV, and BMS services to enhance your building's
+        efficiency, safety, and security. Trust us to illuminate your world. Our expertise ensures a safer, more secure,
+        and efficient environment. We design, install, and maintain systems that protect people, property, and assets.
+      </p>
+      <a href="#" class="btn" onclick="toggleDropdownbtn()">Discover Our Services</a>
+
+      <div class="stats">
+        <div class="stat-box"> <span>500+</span><br>Locations In the Country</div>
+        <div class="stat-box"> <span>25+</span><br>Years Of Experience</div>
+        <div class="stat-box"> <span>200 +</span><br>Specialized Workers</div>
+      </div>
+    </div>
+
+    <div class="visuals">
+      <!-- <img src="{{ url_for('static', filename='assets/blue-round.png') }}" class="blue-circle" alt="background"/> -->
+      <img src="{{ url_for('static', filename='assets/images/thumbs.png') }}" class="thumb thumb-up" alt="like" />
+      <img src="{{ url_for('static', filename='assets/images/thumbs1.png') }}" class="thumb thumb-down" alt="dislike" />
+      <img src="{{ url_for('static', filename='assets/images/Group 24.png') }}" class="lightning" alt="icon" />
+      <img src="{{ url_for('static', filename='assets/images/man.png') }}" class="man" alt="worker" />
+      <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="dots" alt="pattern" />
+
+      <div class="popup">
+        <img src="{{ url_for('static', filename='assets/images/ic_baseline-electric-bolt.png') }}" class="popup-icon" alt="unlock" />
+        <p>Unlock a safer tomorrow <br> with Zahrix !</p>
+        <span class="checkmark"><img src="{{ url_for('static', filename='assets/images/green.png') }}"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----about section--- -->
+  <section class="about-section">
+    <div class="left-images">
+      <div class="exp-label">
+        <div class="exp-number">25</div>
+        <div class="exp-text">
+          <div>Years Experiences</div>
+          <div>Electro Mechanical</div>
+        </div>
+      </div>
+      <img src="{{ url_for('static', filename='assets/images/standard-quality-control-collage-concept.png') }}" class="top-img" alt="worker" />
+      <img src="{{ url_for('static', filename='assets/images/Rectangle 375.png') }}" class="bottom-img" alt="sub worker" />
+      <img src="{{ url_for('static', filename='assets/images/Group 568.png') }}" class="bulb-icon" alt="bulb icon" />
+      <img src="{{ url_for('static', filename='assets/images/Group 538.png') }}" class="user-icon" alt="user icon" />
+      <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="dot-pattern" alt="dot design" />
+    </div>
+
+    <div class="right-content">
+      <div class="title">
+        ABOUT US <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" />
+      </div>
+      <h3>Welcome To ZAH RIX !</h3>
+      <h2>Empowering Your Space, Enhancing Your Life</h2>
+      <p>At AH RIX, we're dedicated to delivering innovative electrical, CCTV, and Building Management System (BMS)
+        solutions. Our expertise ensures a safer, more secure, and efficient environment for homes, businesses, and
+        communities. With cutting-edge technology and exceptional service, we empower your space to reach its full
+        potential. Our team of experts is committed to providing tailored solutions that meet your unique needs. Trust
+        us to illuminate your world with innovative solutions.</p>
+      <div class="teams">
+        <div> <button class="btn"><img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="icon">Learn More</button></div>
+
+        <div>
+          <div class="team-title">Meet Our Expert Team !</div>
+          <img src="{{ url_for('static', filename='assets/images/Frame 506.png') }}" class="team-img" alt="team" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section class="zahrix-services">
+    <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="zahrix-dot-top" alt="dot pattern">
+    <div class="zahrix-services-header">
+      <h3 class="section-label">OUR SERVICES <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}"
+          alt="bolt" style="width:20px;"/></h3>
+      <h2 class="section-title">Expert Services for a Safer, Smarter World</h2>
+    </div>
+
+    <div class="zahrix-service-cards">
+      <div class="zahrix-card zahrix-image-card">
+        <img src="{{ url_for('static', filename='assets/images/standard-quality-control-collage-concept.png') }}" class="zahrix-card-img"
+          alt="service worker">
+        <div class="zahrix-img-overlay">“Experience the best in electrical,<br>CCTV, BMS Solutions”</div>
+      </div>
+
+      <div class="zahrix-card">
+        <div class="cctvcontent">
+          <div>
+            <img src="{{ url_for('static', filename='assets/images/cctv.png') }}" class="zahrix-icon" alt="CCTV Icon">
+          </div>
+          <div>
+            <h4 class="zahrix-title">CCTV</h4>
+          </div>
+        </div>
+        <p class="zahrix-desc">Advanced CCTV systems for enhanced security and surveillance, providing peace of mind and
+          protection. <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" class="lightning-icon"
+            alt="bolt"></p>
+        <a href="/cctv" class="zahrix-readmore">Read More <img src="{{ url_for('static', filename='assets/images/leftarrow.png') }}" alt="arrow"></a>
+      </div>
+
+      <div class="zahrix-card">
+        <div class="cctvcontent">
+          <div>
+            <img src="{{ url_for('static', filename='assets/images/user.png') }}" class="zahrix-icon" alt="CCTV Icon">
+          </div>
+          <div>
+            <h4 class="zahrix-title">BMS</h4>
+          </div>
+        </div>
+        <p class="zahrix-desc">Intelligent Building Management Systems for optimized energy efficiency, security, and
+          comfort. <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" class="lightning-icon"
+            alt="bolt"></p>
+        <a href="/bms" class="zahrix-readmore">Read More <img src="{{ url_for('static', filename='assets/images/leftarrow.png') }}" alt="arrow"></a>
+      </div>
+
+      <div class="zahrix-card">
+        <div class="cctvcontent">
+          <div>
+            <img src="{{ url_for('static', filename='assets/images/electrical (1).png') }}" class="zahrix-icon" alt="CCTV Icon">
+          </div>
+          <div>
+            <h4 class="zahrix-title">ELECTRICAL</h4>
+          </div>
+        </div>
+        <p class="zahrix-desc">Expert electrical solutions for homes and businesses, ensuring safety, efficiency, and
+          reliability. <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" class="lightning-icon"
+            alt="bolt"></p>
+        <a href="/electrical" class="zahrix-readmore">Read More <img src="{{ url_for('static', filename='assets/images/leftarrow.png') }}"
+            alt="arrow"></a>
+      </div>
+    </div>
+    <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="zahrix-dot-bottom" alt="dot pattern">
+  </section>
+
+  <!-- Our Projects Heading -->
+  <section class="zahrix-projects-head">
+    <h3 class="section-label">OUR PROJECTS <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" /></h3>
+    <h2 class="section-title">Electric Solutions for a Brighter Tomorrow</h2>
+
+    <!-- Our Projects Gallery Section -->
+    <section class="zahrix-projects-gallery">
+      <div class="zahrix-gallery-wrapper">
+        <!-- Left Image Card -->
+        <div class="zahrix-gallery-card">
+          <img src="{{ url_for('static', filename='assets/images/home-image-gallary.png') }}" alt="Project Left" class="zahrix-gallery-img" />
+        </div>
+
+        <!-- Center Image Card with Content and Arrow -->
+        <div class="zahrix-gallery-card zahrix-center">
+          <img src="{{ url_for('static', filename='assets/images/home-man.png') }}" alt="Project Center" class="zahrix-gallery-img" />
+          <div class="zahrix-center-dark"></div>
+          <div class="zahrix-center-overlay">
+            <h4 class="overlay-title">LED Lighting Retrofit</h4>
+            <p class="overlay-desc">Illuminating spaces with energy-efficient LED lighting solutions, reducing energy
+              consumption and maintenance costs.</p>
+            <img src="{{ url_for('static', filename='assets/images/tilt-arrow.png') }}" alt="arrow" class="overlay-arrow" />
+          </div>
+        </div>
+
+        <!-- Right Image Card -->
+        <div class="zahrix-gallery-card">
+          <img src="{{ url_for('static', filename='assets/images/home-man1.PNG') }}" alt="Project Right" class="zahrix-gallery-img" />
+        </div>
+      </div>
+
+      <!-- View All Works Button -->
+      <div class="zahrix-gallery-button">
+        <a href="/projects" class="view-all-btn">
+          <img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="icon" /> View All works
+        </a>
+      </div>
+
+      <!-- Dot Pattern Decoration -->
+      <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="zahrix-dot-projects" alt="dot pattern" />
+    </section>
+  </section>
+
+  <!-- ----testimonial section----- -->
+  <section class="index-testimonial" id="testimonials">
+    <div class="test-head">
+      <h2>
+        OUR TESTIMONIALS
+        <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt icon" class="bolt-icon">
+      </h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="test-subhead">
+      <h3>Real People, Real Results</h3>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="testimonial-cards" id="carousel">
+        <!-- Repeat this block 8 times with different content -->
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/girl-test.png') }}" alt="Priya">
+                <div>Priya Patel<br><small style="font-weight: normal;">Homeowner</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “The electrical panel upgrade done by ZAHIRX was seamless. Their electricians were courteous,
+              knowledgeable,
+              and service.
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+
+        </div>
+
+        <!-- Duplicate and modify above block for other 7 testimonials -->
+        <!-- Example for second testimonial -->
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/boy-test.png') }}" alt="Rahul">
+                <div>Rahul Sharma<br><small style="font-weight: normal;">Facility Manager</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “ZAHIRX Electrical Services delivered exceptional work on our office upgrade. Professional, efficient, and
+              timely!”
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+        </div>
+
+
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/boy-test.png') }}" alt="Rahul">
+                <div>Rahul Kiran<br><small style="font-weight: normal;">Facility Manager</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “ZAHIRX Electrical Services delivered exceptional work on our office upgrade. Professional, efficient, and
+              timely!”
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/boy-test.png') }}" alt="Rahul">
+                <div> Sharma Vijay<br><small style="font-weight: normal;">Facility Manager</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “ZAHIRX Electrical Services delivered exceptional work on our office upgrade. Professional, efficient, and
+              timely!”
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/girl-test.png') }}" alt="Priya">
+                <div>Kiran Joshi<br><small style="font-weight: normal;">Homeowner</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “The electrical panel upgrade done by ZAHIRX was seamless. Their electricians were courteous,
+              knowledgeable,
+              and service.
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+        </div>
+
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="profile-info">
+                <img src="{{ url_for('static', filename='assets/images/boy-test.png') }}" alt="Rahul">
+                <div>Jeeva Benoy<br><small style="font-weight: normal;">Facility Manager</small></div>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-text">
+              “ZAHIRX Electrical Services delivered exceptional work on our office upgrade. Professional, efficient, and
+              timely!”
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/quote.png') }}" class="quote-icon" alt="quote">
+          </div>
+          <div class="blue-bar"></div>
+        </div>
+
+      </div>
+      <div class="dots">
+        <!-- <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="dots-bg" alt="dots"> -->
+
+        <div class="nav-buttons">
+
+          <button onclick="scrollCarousel(-1)">‹</button>
+          <button onclick="scrollCarousel(1)">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zahrix-contact-section" id="contact">
+    <div class="zahrix-contact-wrapper">
+
+      <div class="zahrix-contact-text">
+        <h2 class="contact-heading">
+          Let’s Connect
+          <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt icon" class="bolt-icon" />
+          <div class="underline-bar"></div>
+        </h2>
+
+        <h3 class="contact-subheading">
+          We’re here to answer your <br>
+          <span class="highlighted">questions and help</span>
+        </h3>
+
+        <p class="contact-desc">
+          Whether you’re planning a new project or need emergency support, we’re<br>
+          available to provide fast and reliable assistance.
+        </p>
+
+        <a href="/get-quote" class="zahrix-contact-btn">
+          <img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="arrow icon" />
+          Contact Us
+        </a>
+      </div>
+
+      <div class="zahrix-contact-img">
+        <img src="{{ url_for('static', filename='assets/images/electricalwomen.png') }}" alt="electrician woman" />
+      </div>
+    </div>
+  </section>
+
+
+
+  </section>
+  <!-- ---footer section----- -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="logo-content">
+          <div>
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Logo">
+          </div>
+          <div>
+            <h3>ZAHIRX</h3>
+          </div>
+        </div>
+        <p>"At ZAHIRX Delivering Electrical Solutions With Precision and Care"</p>
+        <div class="footer-contact">
+          <img src="{{ url_for('static', filename='assets/images/mail.png') }}" alt="Email">
+          <span>Zahrix@gmail.com</span>
+        </div>
+        <div class="footer-contact">
+          <img src="{{ url_for('static', filename='assets/images/location.png') }}" alt="Location">
+          <span>23/9, Main Road, Chennai</span>
+        </div>
+        <div class="footer-contact">
+          <img src="{{ url_for('static', filename='assets/images/call.png') }}" alt="Phone">
+          <span>+91 86456780987</span>
+        </div>
+      </div>
+      <div class="footer-center">
+        <div class="footer-middle">
+          <div class="subscribe-box">
+            <label for="email">Subscribe</label>
+            <form onsubmit="validateEmail(event)">
+              <input type="email" id="email" placeholder="Enter your email" required>
+              <button type="submit">SIGN UP</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/electrical">Our Services</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="/get-quote">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Team of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Support</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank"><img src="{{ url_for('static', filename='assets/images/linkedin.png') }}" alt="LinkedIn"></a>
+            <a href="https://instagram.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/insta.png') }}" alt="Instagram"></a>
+            <a href="https://facebook.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/facebook.png') }}" alt="Facebook"></a>
+            <a href="https://twitter.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/twitter.png') }}" alt="Twitter"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Developed & Maintained by ZAHIRX - All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
+    }
+
+    function toggleDropdown(event) {
+      event.stopPropagation();
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (drop !== event.currentTarget.parentElement) {
+          drop.classList.remove('open');
+        }
+      });
+      event.currentTarget.parentElement.classList.toggle('open');
+    }
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+    });
+    
+    let index = 0;
+
+    function getVisibleCount() {
+      return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    function scrollCarousel(dir) {
+      const container = document.getElementById('carousel');
+      const card = document.querySelector('.testimonial-container');
+      const cardWidth = card.offsetWidth + 40;
+      const visibleCount = getVisibleCount();
+      const totalCards = container.children.length;
+      const maxIndex = Math.ceil(totalCards / visibleCount) - 1;
+
+      index = Math.max(0, Math.min(index + dir, maxIndex));
+      container.style.transform = `translateX(${-index * cardWidth * visibleCount}px)`;
+    }
+
+    // Reset carousel position on resize
+    window.addEventListener('resize', () => {
+      scrollCarousel(0);
+    });
+     function toggleDropdownbtn() {
+    const dropdown = document.getElementById('dropdownContent');
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    } else {
+      dropdown.style.display = 'block';
+    }
+  }
+    document.querySelectorAll('.footer-contact').forEach((el, i) => {
+    el.style.cursor = 'pointer';
+
+    el.addEventListener('click', () => {
+      if (i === 0) {
+        // Mail
+        window.location.href = "mailto:Zahrix@gmail.com";
+      } else if (i === 1) {
+        // Map
+        window.open("https://www.google.com/maps/search/?api=1&query=23/9,+Main+Road,+Chennai", "_blank");
+      } else if (i === 2) {
+        // Call
+        window.location.href = "tel:+9186456780987";
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>

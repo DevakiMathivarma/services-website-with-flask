@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV | 	CCTV Installation Services</title>
+     <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/logo.png') }}">
+    <!-- --montserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <!-- stylesheet link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/cctv.css') }}">
+    <style>
+        .hero-section {
+            background: url({{ url_for('static', filename='assets/images/man-look-above.png') }}) no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo"> <!-- Replace with actual image -->
+            <span>ZAHIRX</span>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+          <nav id="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <div class="dropdown" id="servicesDropdown">
+        <div class="dropdown-toggle" onclick="toggleDropdown(event)">Services <img src="{{ url_for('static', filename='assets/images/downarrow.png') }}"
+            alt="▼" style="width: 20px; vertical-align: middle;"></div>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="/electrical">Electrical</a>
+          <a href="/cctv">CCTV</a>
+          <a href="/bms">BMS</a>
+        </div>
+      </div>
+      <a href="/projects">Projects</a>
+      <a href="/get-quote" class="quote-btn">Get a Quote</a>
+    </nav>
+    </header>
+    <!-- ----about us section--- -->
+    <section class="hero-section">
+        <h2><strong>CCTV</strong> <span style="font-size: 20px; margin: 0 10px;">❯|</span> <strong>Services</strong>
+        </h2>
+        <p>Sparking Innovation, Illuminating Lives</p>
+    </section>
+
+    <!-- ---cctv section--- -->
+    <section class="zahrix-cctv-section">
+        <div class="zahrix-cctv-header">
+            <h3 class="section-label">OUR SERVICES <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" /></h3>
+            <h2 class="section-title">Expert Services for a Safer, Smarter World</h2>
+            <p class="section-subtext">
+                At ZAHRIX, we offer a comprehensive range of electrical services designed to meet the needs of homes and
+                businesses.
+                Our team of experts is dedicated to providing safe, efficient, and reliable electrical solutions.
+            </p>
+        </div>
+
+        <div class="zahrix-cctv-card">
+            <img src="{{ url_for('static', filename='assets/images/manwithtab.png') }}" alt="CCTV Background" class="zahrix-cctv-bg" />
+            <div class="zahrix-cctv-content">
+                <img src="{{ url_for('static', filename='assets/images/cctv.png') }}" alt="CCTV Icon" class="cctv-icon" />
+                <h4 class="cctv-title">CCTV</h4>
+                <p class="cctv-description">
+                    Advanced CCTV systems for enhanced security and surveillance, providing peace of mind and
+                    protection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="zahrix-services">
+        <div class="zahrix-services-header">
+            <h3 class="section-label">Services We Offer <img
+                    src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" /></h3>
+
+        </div>
+
+        <div class="zahrix-service-cards">
+            <div class="zahrix-card zahrix-image-card">
+                <img src="{{ url_for('static', filename='assets/images/standard-quality-control-collage-concept.png') }}" class="zahrix-card-img"
+                    alt="service worker">
+                <div class="zahrix-img-overlay">“Experience the best in electrical,<br>CCTV, BMS Solutions”</div>
+            </div>
+
+            <div class="zahrix-card">
+                <div class="cctvcontent">
+                    <div>
+                        <img src="{{ url_for('static', filename='assets/images/cctv.png') }}" class="zahrix-icon" alt="CCTV Icon">
+                    </div>
+                    <div>
+                        <h4 class="zahrix-title">CCTV Installation</h4>
+                    </div>
+                </div>
+                <p class="zahrix-desc">Expert CCTV installation services to enhance security and surveillance. Our team designs and installs customized CCTV systems for homes and businesses. Secure your property with our reliable solutions.</p>
+
+            </div>
+
+            <div class="zahrix-card">
+                <div class="cctvcontent">
+                    <div>
+                        <img src="{{ url_for('static', filename='assets/images/user.png') }}" class="zahrix-icon" alt="CCTV Icon">
+                    </div>
+                    <div>
+                        <h4 class="zahrix-title">CCTV Monitoring</h4>
+                    </div>
+                </div>
+                <p class="zahrix-desc">Remote CCTV monitoring services to detect and respond to security threats. Our team monitors your CCTV system 24/7, alerting authorities in case of suspicious activity. Get peace of mind with our expert monitoring services.</p>
+
+            </div>
+
+            <div class="zahrix-card">
+                <div class="cctvcontent">
+                    <div>
+                        <img src="{{ url_for('static', filename='assets/images/electrical (1).png') }}" class="zahrix-icon" alt="CCTV Icon">
+                    </div>
+                    <div>
+                        <h4 class="zahrix-title">CCTV Maintenance</h4>
+                    </div>
+                </div>
+                <p class="zahrix-desc">Regular CCTV maintenance to ensure system uptime and optimal performance. Our technicians perform routine checks, repairs, and upgrades to keep your CCTV system running smoothly.</p>
+
+            </div>
+        </div>
+
+    </section>
+    
+        <div class="electrical-button">
+             <a href="/get-quote" class="zahrix-contact-btn">
+                    <img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="arrow icon" />
+                    Book Now
+                </a>
+        </div>
+
+    <!-- ---zahrix contact section--- -->
+    <section class="zahrix-contact-section" id="contact">
+        <div class="zahrix-contact-wrapper">
+
+
+            <div class="zahrix-contact-text">
+                <h2 class="contact-heading"><span class="underline-word">Let’s</span>Connect</h2>
+                <div class="contact-subheading">We’re here to answer your questions and help</div>
+
+                <a href="/get-quote" class="zahrix-contact-btn">
+                    <img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="arrow icon" />
+                    Contact Us
+                </a>
+            </div>
+
+            <div class="zahrix-contact-img">
+                <img src="{{ url_for('static', filename='assets/images/manspecs.PNG') }}" alt="Worker Image" />
+            </div>
+
+        </div>
+    </section>
+
+ <!-- ---footer section----- -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo-content">
+                    <div>
+                        <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Logo">
+                    </div>
+                    <div>
+                        <h3>ZAHIRX</h3>
+                    </div>
+                </div>
+                <p>"At ZAHIRX Delivering Electrical Solutions With Precision and Care"</p>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/mail.png') }}" alt="Email">
+                    <span>Zahrix@gmail.com</span>
+                </div>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/location.png') }}" alt="Location">
+                    <span>23/9, Main Road, Chennai</span>
+                </div>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/call.png') }}" alt="Phone">
+                    <span>+91 86456780987</span>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div class="footer-middle">
+                    <div class="subscribe-box">
+                        <label for="email">Subscribe</label>
+                        <form onsubmit="validateEmail(event)">
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">SIGN UP</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="/get-quote">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Team of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank"><img src="{{ url_for('static', filename='assets/images/linkedin.png') }}" alt="LinkedIn"></a>
+            <a href="https://instagram.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/insta.png') }}" alt="Instagram"></a>
+            <a href="https://facebook.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/facebook.png') }}" alt="Facebook"></a>
+            <a href="https://twitter.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/twitter.png') }}" alt="Twitter"></a>
+          </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Developed & Maintained by ZAHIRX - All rights reserved.
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='assets/js/main-script.js') }}"></script>
+</body>
+
+</html>

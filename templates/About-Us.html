@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs | Zahrix Electrical Services</title>
+     <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/images/logo.png') }}">
+    <!-- --montserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- stylesheet link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/about-us.css') }}">
+    <style>
+        .hero-section {
+            background: url('{{ url_for('static', filename='assets/images/about-banner.png') }}') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 60px;
+            position: relative;
+            z-index: 1;
+                overflow: hidden;
+                background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+            <span>ZAHIRX</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+           <nav id="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <div class="dropdown" id="servicesDropdown">
+        <div class="dropdown-toggle" onclick="toggleDropdown(event)">Services <img src="{{ url_for('static', filename='assets/images/downarrow.png') }}"
+            alt="▼" style="width: 20px; vertical-align: middle;"></div>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="/electrical">Electrical</a>
+          <a href="/cctv">CCTV</a>
+          <a href="/bms">BMS</a>
+        </div>
+      </div>
+      <a href="/projects">Projects</a>
+      <a href="/get-quote" class="quote-btn">Get a Quote</a>
+    </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2><strong>Home</strong> <span style="font-size: 20px; margin: 0 10px;">❯|</span> <strong>About Us</strong></h2>
+        <p>Sparking Innovation, Illuminating Lives</p>
+    </section>
+
+    <section class="aboutus-section">
+        <div class="left-images">
+            <div class="exp-label">
+                <div class="exp-number">25</div>
+                <div class="exp-text">
+                    <div>Years Experiences</div>
+                    <div>Electro Mechanical</div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='assets/images/standard-quality-control-collage-concept.png') }}" class="top-img" alt="worker" />
+            <img src="{{ url_for('static', filename='assets/images/Rectangle 375.png') }}" class="bottom-img" alt="sub worker" />
+            <img src="{{ url_for('static', filename='assets/images/Group 568.png') }}" class="bulb-icon" alt="bulb icon" />
+            <img src="{{ url_for('static', filename='assets/images/Group 538.png') }}" class="user-icon" alt="user icon" />
+            <img src="{{ url_for('static', filename='assets/images/image 1.png') }}" class="dots" alt="pattern" />
+        </div>
+        <div class="right-content">
+            <div class="title">
+                ABOUT US <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" />
+            </div>
+            <h3>Welcome To ZAH RIX !</h3>
+            <h2>Empowering Your Space, Enhancing Your Life</h2>
+            <p>At AH RIX, we're dedicated to delivering innovative electrical, CCTV, and Building Management System (BMS) solutions. Our expertise ensures a safer, more secure, and efficient environment for homes, businesses, and communities. With cutting-edge technology and exceptional service, we empower your space to reach its full potential. Our team of experts is committed to providing tailored solutions that meet your unique needs. Trust us to illuminate your world with innovative solutions.</p>
+            <div class="teams">
+                <div><button class="btn"><img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="icon">Learn More</button></div>
+                <div>
+                    <div class="team-title">Meet Our Expert Team !</div>
+                    <img src="{{ url_for('static', filename='assets/images/Frame 506.png') }}" class="team-img" alt="team" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-left">
+            <div class="heading">
+                <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="Lightning Icon">
+                <h4>WHO WE ARE</h4>
+            </div>
+            <h2>Trusted experts in electrical Services</h2>
+            <p>At ZAHIRX, we're the trusted experts in electrical services. With years of experience and a team of skilled professionals, we deliver top-notch electrical solutions for homes and businesses. Our expertise spans electrical installations, repairs, and maintenance, ensuring your safety and satisfaction. We're committed to providing exceptional service, transparency, and reliability. Our goal is to build long-term relationships with our clients, providing them with peace of mind and efficient electrical systems. With ZAHIRX, you can trust that your electrical needs are in good hands.</p>
+        </div>
+        <div class="about-right">
+            <img src="{{ url_for('static', filename='assets/images/about-tool.png') }}" alt="Electrician Toolbelt">
+            <img src="{{ url_for('static', filename='assets/images/about-man.png') }}" alt="Electrician at work">
+        </div>
+    </section>
+
+    <section class="approach-section">
+        <div class="approach-left">
+            <div class="image-background"></div>
+            <img src="{{ url_for('static', filename='assets/images/about-man-working.PNG') }}" alt="Worker Image" class="approach-image">
+        </div>
+        <div class="approach-right">
+            <div class="approach-heading">
+                <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="Icon" class="icon">
+                <span>OUR APPROACH</span>
+            </div>
+            <h2 class="approach-title">Powering Communities With Safe & Reliable Solutions</h2>
+            <div class="card mission-card">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='assets/images/cctv.png') }}" alt="Mission Icon" class="card-icon">
+                    <h3>Our Mission</h3>
+                </div>
+                <p>“To deliver high-quality electrical services that ensure safety, efficiency, and customer satisfaction, while building long-term relationships and contributing to the well-being of our community.”</p>
+            </div>
+            <div class="card vision-card">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='assets/images/cctv.png') }}" alt="Vision Icon" class="card-icon">
+                    <h3>Our Vision</h3>
+                </div>
+                <p>“To be the leading provider of innovative electrical solutions, exceeding customer expectations and setting new standards for excellence in the industry.”</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stat-box">
+            <h2>13+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-box">
+            <h2>100+</h2>
+            <p>Emergency Repairs</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-box">
+            <h2>99%</h2>
+            <p>Customer Satisfaction</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-box">
+            <h2>500+</h2>
+            <p>Skilled Professionals</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo-content">
+                    <div><img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Logo"></div>
+                    <div><h3>ZAHIRX</h3></div>
+                </div>
+                <p>"At ZAHIRX Delivering Electrical Solutions With Precision and Care"</p>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/mail.png') }}" alt="Email">
+                    <span>Zahrix@gmail.com</span>
+                </div>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/location.png') }}" alt="Location">
+                    <span>23/9, Main Road, Chennai</span>
+                </div>
+                <div class="footer-contact">
+                    <img src="{{ url_for('static', filename='assets/images/call.png') }}" alt="Phone">
+                    <span>+91 86456780987</span>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div class="footer-middle">
+                    <div class="subscribe-box">
+                        <label for="email">Subscribe</label>
+                        <form onsubmit="validateEmail(event)">
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">SIGN UP</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="/get-quote">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Team of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank"><img src="{{ url_for('static', filename='assets/images/linkedin.png') }}" alt="LinkedIn"></a>
+            <a href="https://instagram.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/insta.png') }}" alt="Instagram"></a>
+            <a href="https://facebook.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/facebook.png') }}" alt="Facebook"></a>
+            <a href="https://twitter.com"target="_blank"><img src="{{ url_for('static', filename='assets/images/twitter.png') }}" alt="Twitter"></a>
+          </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Developed & Maintained by ZAHIRX - All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('active');
+        }
+
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            document.querySelectorAll('.dropdown').forEach(drop => {
+                if (drop !== event.currentTarget.parentElement) {
+                    drop.classList.remove('open');
+                }
+            });
+            event.currentTarget.parentElement.classList.toggle('open');
+        }
+
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
+        });
+
+        function validateEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+            }
+        }
+          document.querySelectorAll('.footer-contact').forEach((el, i) => {
+    el.style.cursor = 'pointer';
+
+    el.addEventListener('click', () => {
+      if (i === 0) {
+        // Mail
+        window.location.href = "mailto:Zahrix@gmail.com";
+      } else if (i === 1) {
+        // Map
+        window.open("https://www.google.com/maps/search/?api=1&query=23/9,+Main+Road,+Chennai", "_blank");
+      } else if (i === 2) {
+        // Call
+        window.location.href = "tel:+9186456780987";
+      }
+    });
+  });
+   function animateCounter(element, target, suffix) {
+    let count = 0;
+    const duration = 2000; // 2 seconds total
+    const step = Math.ceil(target / (duration / 30)); // how much to increment
+    const interval = setInterval(() => {
+      count += step;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      element.textContent = count + suffix;
+    }, 30);
+  }
+
+  const statSection = document.querySelector('.stats-section');
+  const statBoxes = document.querySelectorAll('.stat-box h2');
+  let started = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        statBoxes.forEach(box => {
+          const rawText = box.textContent.trim();
+          const number = parseInt(rawText);
+          const suffix = rawText.replace(/[0-9]/g, '');
+          animateCounter(box, number, suffix);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(statSection);
+    </script>
+</body>
+</html>

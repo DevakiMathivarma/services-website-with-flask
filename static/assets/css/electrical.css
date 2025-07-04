@@ -1,0 +1,1032 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #4b69a9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 20px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 90px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+.logo span {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: inline-block;
+  cursor: pointer;
+    font-size: 18px;
+  font-weight: 600;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  color: black;
+  top: 40px;
+  left: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  transform: translateX(5px);
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
+}
+
+.quote-btn {
+  background: white;
+  color: #2f4ea1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 130px;
+  transition: transform 0.3s;
+}
+
+.quote-btn:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+/* ---hero section-- */
+.hero-section h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* black overlay */
+  z-index: 0;
+}
+
+.hero-section h2,
+.hero-section p {
+  position: relative;
+  z-index: 1;
+}
+/* ---- electrical service section--- */
+
+.electrical-services-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.electrical-services-header {
+  max-width: 850px;
+  margin: 0 auto 40px;
+}
+
+.electrical-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  position: relative;
+  display: inline-block;
+}
+
+.electrical-bolt-icon {
+  width: 25px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.electrical-label .electrical-underline {
+  position: absolute;
+  bottom: -5px;
+  right: 35px;
+  width: 40px;
+  height: 2px;
+  background-color: #b6b5b5;
+  border-radius: 2px;
+}
+
+.electrical-title {
+  font-size: 24px;
+  color: #4b69a9;
+  font-weight: 600;
+  margin: 15px 0;
+}
+.electrical-desc {
+  font-size: 15px;
+  color: black;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Image + Overlay Section */
+.electrical-featured-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.electrical-image-wrapper {
+  position: relative;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.electrical-image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.electrical-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.electrical-overlay {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  max-width: 90%;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.electrical-icon {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.electrical-overlay-heading {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.electrical-overlay-text {
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* ---our services section */
+/* General Section Styling */
+.zahrix-services {
+  padding: 80px 40px;
+  overflow: hidden;
+  position: relative;
+  /* top: -20px;
+  z-index: 2;
+  */
+  padding-top: 0;
+}
+
+.zahrix-services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-label {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.section-label img {
+  width: 25px;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+/* Dot Pattern Images */
+.zahrix-dot-top,
+.zahrix-dot-bottom {
+  position: absolute;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+.zahrix-dot-top {
+  top: -5px;
+  right: 0px;
+  width: 300px;
+  transform: scaleX(-1);
+}
+
+.zahrix-dot-bottom {
+  bottom: 10px;
+  left: 10px;
+  width: 300px;
+  z-index: 5;
+  transform: scaleX(-1);
+  margin-bottom: -30px;
+  position: relative;
+}
+
+.zahrix-service-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Creates 6 equal columns */
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+  width: 75%;
+  margin: auto;
+}
+
+/* General Card Style */
+.zahrix-card {
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; */
+  height: 300px;
+  box-sizing: border-box;
+  background-color: #f1f5ff;
+  animation: cardFadeIn 0.9s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.zahrix-card:hover {
+  transform: scale(2.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1st Card (Image) - span 2 columns */
+.zahrix-service-cards .zahrix-card:nth-child(1) {
+  grid-column: span 2;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 2nd Card (CCTV) - span 4 columns */
+.zahrix-service-cards .zahrix-card:nth-child(2) {
+  grid-column: span 4;
+}
+
+/* 3rd Card (BMS) - span 4 columns */
+.zahrix-service-cards .zahrix-card:nth-child(3) {
+  grid-column: span 4;
+}
+
+/* 4th Card (Electrical) - span 2 columns */
+.zahrix-service-cards .zahrix-card:nth-child(4) {
+  grid-column: span 2;
+  width: 350px;
+}
+
+/* Image Card Style */
+.zahrix-image-card {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  position: relative;
+  min-height: 270px; /* Match other cards */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+}
+
+/* Ensures image fills container */
+.zahrix-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(50%);
+}
+
+/* Overlay Text on Image */
+.zahrix-img-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+
+  padding: 12px 18px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  max-width: 80%;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Text and Icons */
+.zahrix-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.zahrix-title {
+  font-size: 20px;
+  color: #4a64c8;
+  margin-bottom: 10px;
+}
+
+.zahrix-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.lightning-icon {
+  width: 20px;
+  vertical-align: middle;
+  animation: fadeInUp 0.8s ease-out both;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.zahrix-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.zahrix-readmore {
+  text-decoration: none;
+  color: #4a64c8;
+  font-weight: 700;
+  /* display: inline-flex;
+  align-items: flex-end; */
+  gap: 8px;
+  font-size: 14px;
+  text-align: right;
+}
+.zahrix-readmore:hover {
+  color: #99acf8;
+}
+
+.zahrix-readmore img {
+  width: 17px;
+  margin-bottom: -4px;
+  display: inline-block;
+}
+.cctvcontent {
+  display: flex;
+  align-items: center;
+}
+.cctvcontent .zahrix-title {
+  margin-left: 10px;
+  margin-top: -9px;
+}
+.electrical-button .zahrix-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #4b69a9;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+.electrical-button {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.electrical-button .zahrix-contact-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.electrical-button .zahrix-contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+/* Contact Section */
+.zahrix-contact-section {
+  background-color: #f3f6fc; /* light background */
+  padding: 0 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.zahrix-contact-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Left Text */
+.zahrix-contact-text {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.contact-heading {
+  font-size: 32px;
+  color: #4b69a9;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-subheading {
+  font-size: 30px;
+  font-weight: 600;
+  color: #4b69a9;
+  margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* Button */
+.zahrix-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #4b69a9;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.zahrix-contact-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.zahrix-contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.zahrix-contact-img {
+  flex: 1 1 40%;
+  text-align: right;
+}
+
+.zahrix-contact-img img {
+  max-width: 100%;
+  height: auto;
+
+  transition: transform 0.4s ease;
+}
+.zahrix-contact-img img:hover {
+  transform: scale(1.05);
+}
+
+.zahrix-contact-text {
+  animation: fadeSlideUp 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.zahrix-contact-img {
+  animation: fadeSlideUp 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+.underline-word {
+  display: inline-block;
+  border-bottom: 3px solid #4a64c8; /* or any blue color you use */
+  padding-bottom: 4px;
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* --------footer-------- */
+.footer {
+  background-color: #3e5b9e;
+  color: white;
+  padding: 50px 80px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-left img,
+.footer-contact img,
+.social-icons img {
+  transition: transform 0.3s ease;
+}
+
+.footer-left img:hover,
+.footer-contact img:hover,
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-left h3 {
+  display: inline;
+  margin-left: 10px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.footer-contact:hover {
+  transform: translateX(5px);
+}
+
+.subscribe-box label {
+  font-weight: bold;
+  font-size: 23px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.subscribe-box input {
+  padding: 10px;
+  width: 70%;
+  border: none;
+
+  margin-left: -5px;
+  /* margin-right: 10px; */
+  transition: box-shadow 0.3s ease;
+  border-top-left-radius: 10px;
+}
+
+.subscribe-box input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ffffff;
+}
+
+.subscribe-box button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: background 0.3s ease;
+  margin-left: -5px;
+}
+
+.subscribe-box button:hover {
+  background: #222;
+}
+
+.footer-links h4 {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #dcdcdc;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icons a img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 15px;
+  color: #eee;
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+}
+.footer-right {
+  display: flex;
+  gap: 80px;
+  padding: 30px;
+  margin-top: -70px;
+}
+.footer-contact img {
+  margin-right: 30px;
+}
+.footer-left h3 {
+  margin-top: -50px;
+}
+.logo-content {
+  display: flex;
+  align-items: center;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .quote-btn {
+    margin-left: 30px;
+  }
+  .zahrix-services {
+    padding: 60px 5px;
+    margin-left: -50px;
+  }
+  html {
+    overflow-y: auto;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .zahrix-contact-wrapper {
+    max-width: 900px;
+  }
+  .zahrix-contact-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 0px;
+  }
+  .quote-btn {
+    margin-left: 0px;
+  }
+  nav {
+    gap: 10px;
+  }
+    nav a{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .dropdown-toggle {
+
+    font-size: 16px;
+  font-weight: 500;
+}
+  .logo span {
+    font-size: 18px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-desc {
+    font-size: 13px;
+  }
+
+  .overlay-heading {
+    font-size: 16px;
+  }
+
+  .overlay-text {
+    font-size: 13px;
+  }
+
+  .zahrix-services {
+    padding: 60px 5px;
+    margin-left: -100px;
+  }
+  .zahrix-service-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Creates 6 equal columns */
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+    width: 75%;
+    margin: auto;
+  }
+  .zahrix-image-card {
+    margin: auto;
+  }
+  .zahrix-service-cards .zahrix-card:nth-child(4) {
+    grid-column: span 4;
+    width: 680px;
+  }
+  .zahrix-service-image-container {
+    width: 95%;
+  }
+  .electrical-title {
+    font-size: 20px;
+  }
+
+  .electrical-desc {
+    font-size: 13px;
+  }
+
+  .electrical-overlay-heading {
+    font-size: 16px;
+  }
+
+  .electrical-overlay-text {
+    font-size: 13px;
+  }
+
+  .electrical-image-wrapper {
+    width: 95%;
+  }
+  .footer-right {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #4b69a9;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 0px;
+  }
+  .quote-btn {
+    margin-left: 0px;
+  }
+  .footer-right {
+    flex-wrap: wrap;
+  }
+  .zahrix-card {
+    width: 430px;
+  }
+  .zahrix-service-cards .zahrix-card:nth-child(4) {
+    grid-column: span 4;
+    width: 430px;
+  }
+  .zahrix-services {
+    padding: 60px 5px;
+    margin-left: -50px;
+  }
+  /* -zahrixcontact-- */
+  .zahrix-contact-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 426px) {
+  /* ---zahrix service--- */
+  .zahrix-card {
+    width: 390px;
+  }
+  .zahrix-service-cards .zahrix-card:nth-child(4) {
+    grid-column: span 4;
+    width: 390px;
+  }
+  .subscribe-box input {
+    width: 90%;
+  }
+  .subscribe-box button {
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+  .social-icons {
+    flex-direction: row;
+  }
+  .electrical-icon {
+    width: 40px;
+  }
+}
+@media (max-width: 376px) {
+  /* ---zahrix service--- */
+  .zahrix-card {
+    width: 350px;
+  }
+  .zahrix-service-cards .zahrix-card:nth-child(4) {
+    grid-column: span 4;
+    width: 350px;
+  }
+  .electrical-icon {
+    width: 20px;
+  }
+  .electrical-overlay {
+    top: 50%;
+  }
+  .contact-heading {
+    font-size: 27px;
+  }
+
+  .contact-subheading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4b69a9;
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 320px) {
+  .zahrix-card {
+    width: 290px;
+  }
+  .zahrix-service-cards .zahrix-card:nth-child(4) {
+    grid-column: span 4;
+    width: 290px;
+  }
+  .zahrix-services {
+    padding: 60px 5px;
+    margin-left: -30px;
+  }
+  .footer-left {
+    margin-left: -30px;
+  }
+  .subscribe-box input {
+    width: 90%;
+    margin-left: -30px;
+  }
+  .subscribe-box button {
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+    .footer-right{
+  margin-left: -20px;
+}
+}
