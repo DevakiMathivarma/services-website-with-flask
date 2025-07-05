@@ -790,7 +790,7 @@ height:40px;
     <div class="form-title">Booking Your Service Today ! <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" style="width:15px"></div>
     <div class="form-subtitle">Whether you're planning a new project or need emergency support, we're available to provide fast and reliable assistance.</div>
 
-    <form id="serviceForm">
+    <form id="serviceForm" method="POST" action="/submit_form">
       <div class="field">
         <label>First name</label>
         <input type="text" name="fname" placeholder="Enter your firstname" required>
@@ -906,11 +906,22 @@ height:40px;
     const form = document.getElementById("serviceForm");
     const popup = document.getElementById("popup");
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      popup.style.display = "flex";
-popup.classList.add("show");
-    });
+    form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const res = await fetch("/submit_form", {
+    method: "POST",
+    body: formData
+  });
+  const result = await res.json();
+
+  if (result.status === "success") {
+    popup.style.display = "flex";
+    popup.classList.add("show");
+  } else {
+    alert("Failed to send. Try again later.");
+  }
+});
 
     function closePopup() {
      popup.classList.remove("show");

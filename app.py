@@ -1,7 +1,33 @@
 
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask_mail import Mail, Message
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+import os
 app = Flask(__name__)
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Use Gmail SMTP or other provider
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'mathivarmaganesan@gmail.com'        # Your email
+app.config['MAIL_PASSWORD'] = 'ryib qgbq lktw iwhf'            # App password, not Gmail login password
+app.config['MAIL_DEFAULT_SENDER'] = 'devakimathivarma@gmail.com'
+
+mail = Mail(app)
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bookings.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+# ── Booking model ──────────────────────────────────────────────
+class Booking(db.Model):
+    id        = db.Column(db.Integer, primary_key=True)
+    fname     = db.Column(db.String(80))
+    lname     = db.Column(db.String(80))
+    email     = db.Column(db.String(120))
+    phone     = db.Column(db.String(40))
+    date      = db.Column(db.String(20))
+    time      = db.Column(db.String(20))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 @app.route("/")
 def home():
@@ -31,5 +57,63 @@ def projects():
 def get_quote():
     return render_template("get_quote.html")
 
+@app.route('/submit_form', methods=['POST'])
+def submit_form():
+    data = request.form
+    booking = Booking(
+        fname=data.get('fname'),
+        lname=data.get('lname'),
+        email=data.get('email'),
+        phone=data.get('phone'),
+        date=data.get('date'),
+        time=data.get('time')
+    )
+    db.session.add(booking)
+    db.session.commit()
+    msg = Message("Thank you,Received your Quotes. Will contact you",
+                  recipients=[data.get('email')])
+
+    msg.html = f"""
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; background: #f4f4f4; padding: 30px; color: #333;">
+    <div style="max-width: 600px; background: #ffffff; margin: auto; padding: 40px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <h2 style="color: #2f4ea1; text-align: center;">😊 Thank You for Reaching Out! 😊</h2>
+      <p>Dear <strong>{data.get('fname')} {data.get('lname')}</strong>,</p>
+
+      <p>We’ve received your inquiry and are thrilled to assist you! ✨</p>
+
+      <p>Here’s a quick summary of the details you submitted:</p>
+      <ul style="line-height: 1.8;">
+        <li><strong>Email:</strong> {data.get('email')}</li>
+        <li><strong>Phone:</strong> {data.get('phone')}</li>
+        <li><strong>Preferred Date:</strong> {data.get('date')}</li>
+        <li><strong>Preferred Time:</strong> {data.get('time')}</li>
+      </ul>
+
+      <p>Our team will get back to you shortly with more details. 🛠️</p>
+
+      <p style="margin-top: 30px;">Thank you again for your time and trust in <strong>ZAHIRX</strong>. 💡</p>
+
+      <p style="margin-top: 20px;">
+        Warm regards,<br>
+        <strong>Team ZAHIRX</strong><br>
+      </p>
+    </div>
+  </body>
+</html>
+"""
+
+
+    try:
+        print(msg);
+        mail.send(msg)
+        return jsonify({"status": "success"})
+    except Exception as e:
+        print("Mail error:", e)
+        return jsonify({"status": "error"}), 500
+
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()          # creates bookings.db (once)
     app.run(debug=True)
