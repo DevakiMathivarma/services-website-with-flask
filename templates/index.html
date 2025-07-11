@@ -113,7 +113,7 @@
       <div class="title">
         ABOUT US <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" />
       </div>
-      <h3>Welcome To ZAH RIX !</h3>
+      <h3>Welcome To ZAHRIX !</h3>
       <h2>Empowering Your Space, Enhancing Your Life</h2>
       <p>At AH RIX, we're dedicated to delivering innovative electrical, CCTV, and Building Management System (BMS)
         solutions. Our expertise ensures a safer, more secure, and efficient environment for homes, businesses, and
@@ -212,7 +212,7 @@
 
         <!-- Center Image Card with Content and Arrow -->
         <div class="zahrix-gallery-card zahrix-center">
-          <img src="{{ url_for('static', filename='assets/images/home-man.png') }}" alt="Project Center" class="zahrix-gallery-img" />
+          <img src="{{ url_for('static', filename='assets/images/home-man.png') }}" alt="Project Center" class="zahrix-gallery-img" style="border-radius: 10px; "/>
           <div class="zahrix-center-dark"></div>
           <div class="zahrix-center-overlay">
             <h4 class="overlay-title">LED Lighting Retrofit</h4>
@@ -459,7 +459,7 @@
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/electrical">Our Services</a></li>
+              <li><a href="#" onclick="toggleDropdownbtn()">Our Services</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="/get-quote">Contact Us</a></li>
             </ul>
@@ -469,7 +469,7 @@
             <ul>
               <li><a href="#">Team of Use</a></li>
               <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Contact Support</a></li>
+              <li><a href="/get-quote">Contact Support</a></li>
               <li><a href="#">Careers</a></li>
             </ul>
           </div>
@@ -486,7 +486,7 @@
       © 2025 Developed & Maintained by ZAHIRX - All rights reserved.
     </div>
   </footer>
-
+ <script src="{{ url_for('static', filename='assets/js/main-script.js') }}"></script>
   <script>
     function toggleMenu() {
       const nav = document.getElementById('navbar');
@@ -544,7 +544,9 @@
     el.addEventListener('click', () => {
       if (i === 0) {
         // Mail
-        window.location.href = "mailto:Zahrix@gmail.com";
+ 
+        // window.location.href = "https://mail.google.com/mail/?view=cm&to=Zahrix@gmail.com","_blank";
+        window.open("https://mail.google.com/mail/?view=cm&to=Zahrix@gmail.com", "_blank");
       } else if (i === 1) {
         // Map
         window.open("https://www.google.com/maps/search/?api=1&query=23/9,+Main+Road,+Chennai", "_blank");

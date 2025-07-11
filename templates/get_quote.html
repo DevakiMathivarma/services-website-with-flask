@@ -97,7 +97,7 @@ nav a:hover {
 .dropdown-content a {
   display: block;
   padding: 12px 16px;
-  color: #333;
+  color: #4b69a9;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -776,7 +776,8 @@ height:40px;
     <div class="breadcrumb-content">
       <div class="breadcrumb-path">
         <a href="/">Home</a>
-        <span>❯</span>
+        <span style="font-size: 15px; margin: 0 10px;
+  font-weight: 300;">❯|</span>
         <strong>Contact Us</strong>
       </div>
       <p class="breadcrumb-subtext">Sparking Innovation, Illuminating Lives</p>
@@ -793,27 +794,27 @@ height:40px;
     <form id="serviceForm" method="POST" action="/submit_form">
       <div class="field">
         <label>First name</label>
-        <input type="text" name="fname" placeholder="Enter your firstname" required>
+        <input type="text" name="fname" placeholder="e.g xxxx" required>
       </div>
       <div class="field">
         <label>Last name</label>
-        <input type="text" name="lname" placeholder="Enter your lastname" required>
+        <input type="text" name="lname" placeholder="e.g yyyy" required>
       </div>
       <div class="field">
         <label>Email</label>
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="e.g xxxx.gmail.com" required>
       </div>
       <div class="field">
         <label>Phone</label>
-        <input type="tel" name="phone" placeholder="Enter your number" required>
+        <input type="tel" name="phone" placeholder="e.g 12346678" required>
       </div>
       <div class="field">
         <label>Pick the date</label>
-        <input type="date" name="date" required>
+        <input type="text" name="date" placeholder="e.g 05/9/25" required id="datepicker">
       </div>
       <div class="field">
         <label>Choose Your Time</label>
-        <input type="time" name="time" required>
+        <input type="text" name="time" placeholder="e.g 10.00 AM" required id="timepicker">
       </div>
       <div class="checkbox-container">
         <input type="checkbox" id="terms" required>
@@ -873,8 +874,8 @@ height:40px;
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/electrical">Our Services</a></li>
-              <li><a href="#">Testimonials</a></li>
+              <li><a href="#"  class="btn" onclick="toggleDropdownbtn()">Our Services</a></li>
+              <li><a href="{{ url_for('home') }}#testimonials">Testimonials</a></li>
               <li><a href="/get-quote">Contact Us</a></li>
             </ul>
           </div>
@@ -883,7 +884,7 @@ height:40px;
             <ul>
               <li><a href="#">Team of Use</a></li>
               <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Contact Support</a></li>
+              <li><a href="/get-quote">Contact Support</a></li>
               <li><a href="#">Careers</a></li>
             </ul>
           </div>
@@ -902,12 +903,77 @@ height:40px;
   </footer>
 
 <script src="{{ url_for('static', filename='assets/js/main-script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
-    const form = document.getElementById("serviceForm");
-    const popup = document.getElementById("popup");
+//     const form = document.getElementById("serviceForm");
+//     const popup = document.getElementById("popup");
 
-    form.addEventListener("submit", async function(e) {
+//     form.addEventListener("submit", async function(e) {
+//   e.preventDefault();
+//   const formData = new FormData(form);
+//   const res = await fetch("/submit_form", {
+//     method: "POST",
+//     body: formData
+//   });
+//   const result = await res.json();
+
+//   if (result.status === "success") {
+//     popup.style.display = "flex";
+//     popup.classList.add("show");
+//   } else {
+//     alert("Failed to send. Try again later.");
+//   }
+// });
+
+const form = document.getElementById("serviceForm");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", async function(e) {
   e.preventDefault();
+
+  // Get values
+  const email = form.email.value.trim();
+  const phone = form.phone.value.trim();
+  const date = form.date.value.trim();
+
+  // Validation patterns
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phonePattern = /^[1-9][0-9]{9}$/;
+
+  // Validate email
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Validate phone
+  if (!phonePattern.test(phone)) {
+    alert("Please enter a valid phone number ");
+    return;
+  }
+  if (!email.endsWith('.com')) {
+        alert('Email must end with ".com".');
+        return;
+    }
+
+  // ✅ Validate year
+  if (date) {
+    const parsedDate = new Date(date);
+    const selectedYear = parsedDate.getFullYear();
+    const currentYear = new Date().getFullYear();
+
+    if (selectedYear < currentYear) {
+      alert(`Please select a year that is ${currentYear} or later.`);
+      return;
+    }
+  } else {
+    alert("Please select a valid date.");
+    return;
+  }
+
+  // Prepare data and send to server
   const formData = new FormData(form);
   const res = await fetch("/submit_form", {
     method: "POST",
@@ -922,11 +988,19 @@ height:40px;
     alert("Failed to send. Try again later.");
   }
 });
-
     function closePopup() {
      popup.classList.remove("show");
       form.reset();
     }
+    flatpickr("#datepicker", {
+    dateFormat: "d-M-Y" // Example: 11-Jul-2025
+  });
+  flatpickr("#timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "h:i K",  // 03:45 PM format
+    time_24hr: false      // Set to true for 24-hour format like 15:45
+  });
   </script>
 </body>
 </html>

@@ -76,11 +76,11 @@
             <div class="title">
                 ABOUT US <img src="{{ url_for('static', filename='assets/images/material-symbols_electric-bolt-outline.png') }}" alt="bolt" />
             </div>
-            <h3>Welcome To ZAH RIX !</h3>
+            <h3>Welcome To ZAHRIX !</h3>
             <h2>Empowering Your Space, Enhancing Your Life</h2>
             <p>At AH RIX, we're dedicated to delivering innovative electrical, CCTV, and Building Management System (BMS) solutions. Our expertise ensures a safer, more secure, and efficient environment for homes, businesses, and communities. With cutting-edge technology and exceptional service, we empower your space to reach its full potential. Our team of experts is committed to providing tailored solutions that meet your unique needs. Trust us to illuminate your world with innovative solutions.</p>
             <div class="teams">
-                <div><button class="btn"><img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="icon">Learn More</button></div>
+                <div><button class="btn" style="display: none;"><img src="{{ url_for('static', filename='assets/images/arrow.PNG') }}" alt="icon">Learn More</button></div>
                 <div>
                     <div class="team-title">Meet Our Expert Team !</div>
                     <img src="{{ url_for('static', filename='assets/images/Frame 506.png') }}" class="team-img" alt="team" />
@@ -190,17 +190,17 @@
                         <h4>Quick Links</h4>
                         <ul>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#"  class="btn" onclick="toggleDropdownbtn()">Our Services</a></li>
+                            <li><a href="{{ url_for('home') }}#testimonials">Testimonials</a></li>
                             <li><a href="/get-quote">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="#">Team of Use</a></li>
+                            <li><a href="#">Terms of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="/get-quote">Contact Support</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </div>
@@ -217,7 +217,7 @@
             © 2025 Developed & Maintained by ZAHIRX - All rights reserved.
         </div>
     </footer>
-
+<script src="{{ url_for('static', filename='assets/js/main-script.js') }}"></script>
     <script>
         function toggleMenu() {
             const nav = document.getElementById('navbar');
@@ -238,20 +238,14 @@
             document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
         });
 
-        function validateEmail(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            if (email) {
-                alert('Thank you for subscribing!');
-            }
-        }
+       
           document.querySelectorAll('.footer-contact').forEach((el, i) => {
     el.style.cursor = 'pointer';
 
     el.addEventListener('click', () => {
       if (i === 0) {
         // Mail
-        window.location.href = "mailto:Zahrix@gmail.com";
+        window.location.href = "https://mail.google.com/mail/?view=cm&to=Zahrix@gmail.com","_blank";
       } else if (i === 1) {
         // Map
         window.open("https://www.google.com/maps/search/?api=1&query=23/9,+Main+Road,+Chennai", "_blank");
@@ -294,6 +288,14 @@
   }, { threshold: 0.5 });
 
   observer.observe(statSection);
+   function toggleDropdownbtn() {
+    const dropdown = document.getElementById('dropdownContent');
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    } else {
+      dropdown.style.display = 'block';
+    }
+  }
     </script>
 </body>
 </html>

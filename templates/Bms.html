@@ -51,7 +51,7 @@
 
   <div class="breadcrumb-content">
     <p class="breadcrumb-path">
-      <a href="/">BMS</a>
+      <a href="/">Home</a>
       <span class="breadcrumb-separator" style="font-size: 20px; margin: 0 10px;">❯|</span>
       <span class="current-page">Services</span>
     </p>
@@ -225,8 +225,8 @@ Our technicians perform routine checks, repairs, and upgrades to keep your BMS s
                         <h4>Quick Links</h4>
                         <ul>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#" class="btn" onclick="toggleDropdownbtn()">Our Services</a></li>
+                            <li><a href="{{ url_for('home') }}#testimonials">Testimonials</a></li>
                             <li><a href="/get-quote">Contact Us</a></li>
                         </ul>
                     </div>
@@ -235,7 +235,7 @@ Our technicians perform routine checks, repairs, and upgrades to keep your BMS s
                         <ul>
                             <li><a href="#">Team of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="/get-quote">Contact Support</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </div>

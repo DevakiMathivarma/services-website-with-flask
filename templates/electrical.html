@@ -57,7 +57,7 @@
     </header>
     <!-- ----about us section--- -->
     <section class="hero-section">
-        <h2><strong>Electrical</strong> <span style="font-size: 20px; margin: 0 10px;">❯|</span> <strong>Services</strong>
+        <h2><strong>Home</strong> <span style="font-size: 20px; margin: 0 10px;">❯|</span> <strong>Services</strong>
         </h2>
         <p>Sparking Innovation, Illuminating Lives</p>
     </section>
@@ -229,8 +229,8 @@
                         <h4>Quick Links</h4>
                         <ul>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#"  class="btn" onclick="toggleDropdownbtn()">Our Services</a></li>
+                            <li><a href="{{ url_for('home') }}#testimonials">Testimonials</a></li>
                             <li><a href="/get-quote">Contact Us</a></li>
                         </ul>
                     </div>
@@ -239,7 +239,7 @@
                         <ul>
                             <li><a href="#">Team of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="/get-quote">Contact Support</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </div>

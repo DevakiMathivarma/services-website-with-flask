@@ -90,7 +90,7 @@ nav a:hover {
 .dropdown-content a {
   display: block;
   padding: 12px 16px;
-  color: #333;
+  color: #4b69a9;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -302,13 +302,14 @@ nav a:hover {
 .right-content h3 {
   margin-top: 20px;
   font-size: 20px;
-  color: #4a64c8;
+ color:black
 }
 
 .right-content h2 {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
+   color: #4a64c8;
 }
 
 .right-content p {
