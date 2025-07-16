@@ -1,5 +1,5 @@
 
-        function toggleMenu() {
+function toggleMenu() {
             const nav = document.getElementById('navbar');
             nav.classList.toggle('active');
         }
@@ -14,43 +14,11 @@
             event.currentTarget.parentElement.classList.toggle('open');
         }
 
-        // Close dropdown if clicking outside
         document.addEventListener('click', function () {
             document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
         });
-        //   function validateEmail(e) {
-        //     e.preventDefault();
-        //     const email = document.getElementById('email').value;
-        //     if (email) {
-        //         alert('Thank you for subscribing!');
-        //     }
-        // }
-         document.addEventListener('click', function () {
-        document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('open'));
-    });
 
-
-    
-    function validateEmail(e) {
-    e.preventDefault(); // Prevent form reload
-
-    const emailInput = document.getElementById('email');
-    const email = emailInput.value.trim();
-
-    // Basic email format check
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!email) {
-      alert('Please enter an email address.');
-    } else if (!emailPattern.test(email)) {
-      alert('Invalid email address.');
-    } else if (!email.toLowerCase().endsWith('.com')) {
-      alert('Email must end with ".com".');
-    } else {
-      alert('Thank you for subscribing!');
-      emailInput.value = ''; // ✅ Clear the input field
-    }
-  }
+       
           document.querySelectorAll('.footer-contact').forEach((el, i) => {
     el.style.cursor = 'pointer';
 
@@ -67,7 +35,40 @@
       }
     });
   });
-    function toggleDropdownbtn() {
+   function animateCounter(element, target, suffix) {
+    let count = 0;
+    const duration = 2000; // 2 seconds total
+    const step = Math.ceil(target / (duration / 30)); // how much to increment
+    const interval = setInterval(() => {
+      count += step;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      element.textContent = count + suffix;
+    }, 30);
+  }
+
+  const statSection = document.querySelector('.stats-section');
+  const statBoxes = document.querySelectorAll('.stat-box h2');
+  let started = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        statBoxes.forEach(box => {
+          const rawText = box.textContent.trim();
+          const number = parseInt(rawText);
+          const suffix = rawText.replace(/[0-9]/g, '');
+          animateCounter(box, number, suffix);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(statSection);
+   function toggleDropdownbtn() {
     const dropdown = document.getElementById('dropdownContent');
     if (dropdown.style.display === 'block') {
       dropdown.style.display = 'none';
